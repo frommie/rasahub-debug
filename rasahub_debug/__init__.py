@@ -43,7 +43,11 @@ class DebugConnector(RasahubPlugin):
         """
         sends to console log
         """
-        self.con.send(json.dumps(messagedata).encode())
+        sending = {
+            'message': messagedata.message,
+            'message_id': messagedata.message_id
+        }
+        self.con.send(json.dumps(sending).encode())
 
     def receive(self):
         """
@@ -70,6 +74,9 @@ class DebugConnector(RasahubPlugin):
             return None
 
     def process_command(self, command, payload):
+        """
+        Debug command hook
+        """
         print(command)
         print(payload)
         return_message = {
@@ -83,4 +90,7 @@ class DebugConnector(RasahubPlugin):
         return return_message
 
     def end(self):
+        """
+        Shuts down socket connection to debug client
+        """
         self.con.shutdown(socket.SHUT_RDWR)
