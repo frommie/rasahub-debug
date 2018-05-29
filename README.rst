@@ -36,7 +36,6 @@ Create file config.yml in working path. Example:
 
   debug1:
     package: 'rasahub_debug'
-    classname: 'DebugConnector'
     init:
       host: '127.0.0.1'
       port: 5020
@@ -44,7 +43,6 @@ Create file config.yml in working path. Example:
 
   debug2:
     package: 'rasahub_debug'
-    classname: 'DebugConnector'
     init:
       host: '127.0.0.1'
       port: 5021
