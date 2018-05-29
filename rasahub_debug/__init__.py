@@ -13,11 +13,11 @@ class DebugConnector(RasahubPlugin):
     Debugging Connector for Rasahub
     """
 
-    def __init__(self, **kwargs):
+    def __init__(self, host = '127.0.0.1', port = 5020):
         super(DebugConnector, self).__init__()
 
-        self.ip = kwargs.get('host', '127.0.0.1')
-        self.port = int(kwargs.get('port', 5020))
+        self.ip = host
+        self.port = port
 
         try:
             rasasocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

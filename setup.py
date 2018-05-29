@@ -13,7 +13,7 @@ extras_requires = {
 }
 
 setup(name='rasahub-debug',
-      version='0.0.1',
+      version='0.0.2',
       description='Debugging connector for Rasahub',
       url='http://github.com/frommie/rasahub-debug',
       author='Christian Frommert',
